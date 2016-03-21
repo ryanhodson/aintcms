@@ -20,11 +20,11 @@ module.exports.show = function() {
 
   // Load the files from the Git repo
   var root = TreeNode('root', [], "");
-  getDirectories(model.gitRepoPath(), root);
+  var sourceDir = path.join(model.gitRepoPath(), 'src'); // TODO: Hardcode bad
+  getDirectories(sourceDir, root);
 
 
   // Display the files from the Git repo
-
   $("#browser-list").html(renderDirectory(root));
 
   $(".file-item").click(function(e) {
