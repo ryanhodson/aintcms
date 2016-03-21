@@ -15,7 +15,7 @@ button {
 }
 
 body {
-  /* TODO: Depending on a locally-install font at the moment */
+  /* TODO: Depending on a locally-installed font at the moment */
   font-family: "Source Sans Pro", serif;
   font-size: 17px;
   font-weight: 200;
