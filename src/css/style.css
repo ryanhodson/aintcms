@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+}
+
+body {
+  /* TODO: Depending on a locally-install font at the moment */
+  font-family: "Source Sans Pro", serif;
+  font-size: 17px;
+  font-weight: 200;
+
+  line-height: 1.7em;
+
+  color: #4B4B4B;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+ul {
+  margin: 0px 20px;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+.button,
+.button:visited {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 30px;
+  border-radius: 5px; 
+
+  background-color: #4D8EDB;
+  color: #FFF;
+  
+  font-weight: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:visited:hover {
+  background-color: #519BF0;
+}
+
+.button:active,
+.button:visited:active {
+  background-color: #4077B8;
+}
+
+.button:disabled {
+  background-color: #B0BDCD;
+}
+
+.file-item {
+  cursor: pointer;
+}
+
+.editor-nav {
+  color: #4D8EDB;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.editor-nav:hover {
+  text-decoration: underline;
+}
+
+.page-editor-nav {
+  margin-bottom: 30px;
+}
+
+.editor {
+  font-family: monospace;
+  font-size: 14px;
+  background-color: #FFF;
+  width: 100%;
+  min-height: 400px;
+  padding: 10px;
+}
+
+
+/* --- Layout --- */
+
+.content {
+  background-color: #E3E3E3;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.header {
+  width: 100%;
+  background-color: #ECECEC;
+  text-align: center;
+  padding: 50px;
+}
+
+.header h1 {
+  font-size: 51px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #8D8D8D;
+}
+
+
+.center-column {
+  width: 450px;
+  margin: 0 auto;
+}
+
+.form-row {
+  margin: 40px 0;
+}
+
+.form-label,
+#welcome-ssh-key {
+  color: #8D8D8D;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.form input {
+  display: block;
+  width: 100%;
+  border: 1px solid #949494;
+  border-radius: 3px;
+
+  font-family: "Source Sans Pro", serif;
+  font-size: 17px;
+  font-weight: 200;
+
+  color: #4B4B4B;
+  padding: 5px 10px;
+}
+
+.form-row .button {
+  float: right;
+}
+
+.form-row .button--left {
+  float: left;
+}
+
+.form-status {
+  clear: both;
+  float: right;
+
+  color: #8D8D8D;
+  font-style: italic;
+  font-size: 14px;
+}
+
+
+
+

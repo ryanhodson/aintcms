@@ -1,0 +1,22 @@
+{
+  "name": "localcms",
+  "version": "0.0.1",
+  "description": "A next-generation content management system",
+  "main": "src/main.js",
+  "scripts": {
+    "prestart": "gulp build",
+    "start": "electron ."
+  },
+  "author": "Ryan Hodson",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^1.5.2",
+    "del": "^2.2.0",
+    "electron-prebuilt": "^0.36.9",
+    "github": "^0.2.4",
+    "gulp": "^3.9.1",
+    "gulp-swig": "^0.8.0",
+    "jquery": "^2.2.2",
+    "swig": "^1.4.2"
+  }
+}
