@@ -125,7 +125,7 @@ $(document).ready(function() {
 
     var destFile = model.editedFilePath();
     var relativeDestFile = destFile.replace(opts.cwd + "/", "");
-    var message = "LocalCMS edits to " + relativeDestFile;
+    var message = "Ain't CMS edits to " + relativeDestFile;
 
     // Stage the file
     var gitAdd = spawnSync('git', ['add', relativeDestFile], opts);

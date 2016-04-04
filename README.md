@@ -1,25 +1,23 @@
 
-# LocalCMS
+# Ain't CMS
 
 This repository is a proof of concept for a Git-based content management system
-that lets non-technical users edit website content just like developers do.
+that lets non-developer authors edit static website content just like
+developers do. Learn more at [aint.io](https://aint.io).
 
-Instead of running a server and letting users edit content in a database,
-LocalCMS runs (you guessed it) on the user's local computer as a desktop
-application.
+Instead of running a server and letting users edit content in a database, Ain't
+CMS runs on the user's local computer as a desktop application.
 
-To publish content, LocalCMS creates a new Git branch, commits the desired
+To publish content, Ain't CMS creates a new Git branch, commits the desired
 changes, pushes it up to a GitHub repository, and creates a pull request asking
 to merge the new branch into `master`. Notice that this is exactly how
-developers publish changes to a website.
-
+developers publish changes to a website. 
 
 # Disclaimer
 
 This project is currently a **PROOF OF CONCEPT**. It's not designed to be used
-in production, and is not exactly secure (more about that below). It's also
-missing some core features like error handling for invalid credentials,
-changing the remote Git repo URL, etc.
+in production (yet). It's also missing some core features like error handling
+for invalid credentials, changing the remote Git repo URL, etc.
 
 
 # Dependencies
@@ -32,18 +30,19 @@ your `PATH`:
 - `ssh`
 
 This proof of concept is also designed to work with `localcms-sample-site`, so
-you'll need to clone that, too (the path is hardcoded as the default value in
-the `welcome.html` page.)
+you'll need to clone that, too. This is currently a private GitHub repo
+designed specifically to test Ain't CMS. A formal (and publically accessible)
+example project will be released shortly.
 
 
-# Installation
+# Installation and Usage
 
 Clone this repository, then run the following:
 
     npm install
     npm start
 
-The second command will open LocalCMS inside of an Electron wrapper.
+The second command will open Ain't CMS inside of an Electron wrapper.
 
 
 ## Cross-Platform Support
@@ -56,7 +55,7 @@ problem for Windows users.
 
 # Git Branching Model
 
-There's all sorts of ways that LocalCMS's branching model could be configured.
+There's all sorts of ways that Ain't CMS's branching model could be configured.
 Right now, it works like this:
 
 - Editing a page:
@@ -70,7 +69,7 @@ Right now, it works like this:
   - Edit file and preview in this branch
 - Publishing a page:
   - Create a commit with just the file being edited
-    - Use `"LocalCMS edits to <filename>"` as the commit message
+    - Use `"Ain't CMS edits to <filename>"` as the commit message
   - Merge the `localcms-<random>` branch into `master`
   - Push the branch to the origin repo
   - Create a pull request for `localcms-<random>` into `master`
@@ -83,8 +82,8 @@ be counterintuitive.
 
 # Security
 
-LocalCMS uses native Git commands to move content contributions from the local
-machine to remote Git repositories. Currently, LocalCMS uses HTTP basic
+Ain't CMS uses native Git commands to move content contributions from the local
+machine to remote Git repositories. Currently, Ain't CMS uses HTTP basic
 authentication for:
 
 - `git clone` for the initial clone
@@ -92,19 +91,18 @@ authentication for:
 - `git push` for the 
 
 I didn't want to deal with calling out to interactive shells for password
-input, so all credentials are passed *in the URL*. This has serious security
-implications.
+input, so all credentials are passed *in the URL*. This isn't necessarily
+insecure if the app is sandboxed, but it does mean there's a chance that
+passwords will be stored in plaintext somewhere on the user's local machine.
 
 An effort was made to avoid storing passwords on disk (e.g., the `origin`
-remote is deleted immediately after the initial `git clone`), but that doesn't
-mean it's not possible to leak your credentials.
+remote is deleted immediately after the initial `git clone`).
 
 
 # To Do
 
-- Security concerns
-- SSH support
-- Creating new pages
+- Security considerations and SSH support
+- Creating, renaming, and deleting pages
 - Editing only *content* pages (e.g., not `package.json`)
 - Configurable build commands/web frameworks (these are currently hardcoded)
 - WYSIWYG editor (if supporting multiple web frameworks, this is tricky)
@@ -114,7 +112,7 @@ mean it's not possible to leak your credentials.
 - NodeGit for native Git integration (requires building from source)
 - Synchronous calls in `editor.js`
 - Syntax highlighting
-- HTML linting
+- HTML linting on user-save
 - Code snippets
 	- Snippet for templates
 	- Or load from dev config file

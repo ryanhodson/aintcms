@@ -51,13 +51,19 @@ $(document).ready(function() {
 function renderDirectory(node) {
   var result = "<ul>";
   for (var childNode of node.contents) {
-    result += "<li data-path='" + childNode.fullPath + "' class='file-item'>" // Add an id here to map to objects
-    result += childNode.name;
     if (childNode.contents.length > 0) {
+      // No `data-path` attribute or `file-item` class for folders
+      result += "<li>" + childNode.name + "/";
+      
       // Add nested list for directories
       result += renderDirectory(childNode);
+      result += "</li>";
+    } else {
+      // Not a folder, give it a data-path and class to make it selectable
+      result += "<li data-path='" + childNode.fullPath + "' class='file-item'>";
+      result += childNode.name;
+      result += "</li>";
     }
-    result += "</li>";
   }
   result += "</ul>";
   return result;
