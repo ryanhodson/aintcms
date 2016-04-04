@@ -12,13 +12,6 @@ const password = require('./js/password.js');
 var ignoredFolders = ['node_modules', 'dist'];
 
 
-// Any window/document initialization happens here
-$(document).ready(function() {
-
-
-});
-
-
 // Any app initialization happens here
 ipcRenderer.on('app-ready', function(event, appConfig) {
   // Record the user data path passed in from the main process

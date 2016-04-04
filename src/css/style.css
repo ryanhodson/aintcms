@@ -111,11 +111,13 @@ h1 {
 
 .header h1 {
   font-size: 51px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .header p {
   color: #8D8D8D;
+  margin-bottom: 0;
+  font-size: 15px;
 }
 
 

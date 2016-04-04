@@ -5,6 +5,19 @@ const path = require('path');
 var config = {};
 var state = {};
 
+// TODO: Factory
+// TODO: GitRepository model
+// TODO: GitUser model
+
+/*
+module.exports = function GitRepo() {
+  var me = {};
+  me.path = "whatever";
+  return me;
+}
+var repo = GitRepo();
+*/
+
 
 // --- Configuration Variables ---
 

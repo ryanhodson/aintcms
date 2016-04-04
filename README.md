@@ -33,7 +33,7 @@ your `PATH`:
 
 This proof of concept is also designed to work with `localcms-sample-site`, so
 you'll need to clone that, too (the path is hardcoded as the default value in
-the `welcome.html` page.
+the `welcome.html` page.)
 
 
 # Installation
@@ -64,6 +64,9 @@ Right now, it works like this:
   - Make sure `master` is checked out
   - Pull in upstream changes from `origin/master`
   - Create a new branch called `localcms-<random>`
+  	- TODO: Dedicated branch per page, check this branch out each time, don't
+	  make a pull request unless it's a new branch?
+	- TODO: `localcms-<username>-<file>` for branch names
   - Edit file and preview in this branch
 - Publishing a page:
   - Create a commit with just the file being edited
@@ -110,5 +113,10 @@ mean it's not possible to leak your credentials.
 - Unit tests
 - NodeGit for native Git integration (requires building from source)
 - Synchronous calls in `editor.js`
+- Syntax highlighting
+- HTML linting
+- Code snippets
+	- Snippet for templates
+	- Or load from dev config file
 
 

@@ -24,6 +24,8 @@ module.exports.editFile = function(fullPath) {
 
   // --- Git Prep ---
 
+  // TODO: Move to git-repo.js methods
+
   var opts = {
     cwd: model.gitRepoPath()
   }

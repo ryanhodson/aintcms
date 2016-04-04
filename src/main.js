@@ -18,11 +18,10 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   var distDir = __dirname + "/../dist";
   mainWindow = new BrowserWindow({width: 1000, height: 800});
-  mainWindow.webContents.openDevTools();
   mainWindow.loadURL('file://' + distDir + '/index.html');
-  
-  mainWindow.webContents.openDevTools();
   mainWindow.webContents.send('app-ready', app);
+
+  mainWindow.webContents.openDevTools(); // TODO: (TMP)
 
   mainWindow.on('closed', function() {
     mainWindow = null;

@@ -3,7 +3,6 @@ const async = require('async');
 const del = require('del');
 const fs = require('fs');
 const path = require('path');
-const spawnSync = require('child_process').spawnSync;
 const spawn = require('child_process').spawn;
 
 const pages = require('./pages.js');
@@ -31,13 +30,12 @@ $(document).ready(function() {
     var msg = "Cloning Git repo (this could take awhile)....";
     $("#page-welcome-website-config .form-status").text(msg);
 
-
     // Gather user input
     var user = $("#welcome-full-name").val();
     var password = $("#welcome-password").val();
     var gitRepo = $("#welcome-git-repo").val();
 
-    // Add HTTPS authentication parameters (INSECURE!)
+    // Add HTTPS authentication parameters
     var gitRepoPath = gitRepo.split("https://github.com")[1];
     var destRepo = model.userDataPath() + path.sep +
                    path.basename(gitRepoPath, ".git");
@@ -76,7 +74,7 @@ $(document).ready(function() {
         });
       },
       function(callback) {
-        // Delete the default `origin` remote
+        // Delete the default `origin` remote to avoid storing password on disk
         var gitRemoteRM = spawn('git', ['remote', 'rm', 'origin'], opts);
         
         gitRemoteRM.on('close', function(code) {
